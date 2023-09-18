@@ -1,0 +1,40 @@
+
+.selected {
+    background-color: yellow;
+}
+table {
+	width: 200px;
+	height: 200px;
+	empty-cells: show;
+    border: 5px solid yellow;
+}
+
+td{
+    width: 20px;
+	height: 20px;
+	empty-cells: show;
+    border: 1px solid black;
+}
+
+.invisibleElement {
+    display: none;
+}
+
+section {
+    border: 1px solid black;
+}
+
+label {
+    display: block;
+    cursor: pointer;
+    transition: background .3s ease-out
+}
+
+input[type=checkbox] {
+    position: absolute;
+    appearance: none;
+}
+
+input[type=checkbox]:checked+.invisibleElement {
+    display: block;
+}
