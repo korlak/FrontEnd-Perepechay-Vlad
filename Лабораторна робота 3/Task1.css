@@ -3,19 +3,30 @@
     background-color: yellow;
 }
 table {
-	width: 200px;
-	height: 200px;
 	empty-cells: show;
-    border: 5px solid yellow;
 }
-
+span{
+    padding: 10px;
+    line-height: 30px;
+}
 td{
-    width: 20px;
-	height: 20px;
 	empty-cells: show;
-    border: 1px solid black;
+    border: 1.5px solid black;
 }
-
+.tdStyle{
+    width: 30px;
+    height: 30px;
+}
+.tdStyleRed{
+    border-color: red;
+    width: 30px;
+    height: 30px;
+}
+.tdStyleBlue{
+    border-color: Blue;
+    width: 30px;
+    height: 30px;
+}
 .invisibleElement {
     display: none;
 }

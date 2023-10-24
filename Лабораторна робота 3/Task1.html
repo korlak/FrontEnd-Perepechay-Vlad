@@ -9,108 +9,70 @@
 </head>
 
 <body>
-    <div id="paragraphs">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-    </div>
+    <section>
+        <label for="zavd1">Завдання 1</label>
+        <input type="checkbox" id="zavd1">
+        <div class="invisibleElement">
+            <div id="paragraphs">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.1</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.22</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.333</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.4444</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.55555</p>
+            </div>
+            <hr>
+            <table>
+                <tr>
+                    <td><div>Масив: </div></td>
+                    <td><span id="arr"></span></td>
+                </tr>
+                <tr>
+                    <td><div>Реверсивний Масив:</div></td>
+                    <td><span id="arrReverse"></span></td>
+                </tr>
+                <tr>
+                    <td><div>Сортований Масив: </div></td>
+                    <td><span id="arrSort"></span></td>
+                </tr>
+                <tr>
+                    <td><div>Найбільше значення:</div></td>
+                    <td><span id="max"></span></td>
+                </tr>
+                <tr>
+                    <td><div>Найменше значення:</div></td>
+                    <td><span id="min"></span></td>
+                </tr>
+                <tr>
+                    <td><div>Кількість чисел які складаються з 2 цифр:</div></td>
+                    <td><span id="count"></span></td>
+                </tr>
+                <tr>
+                    <td><div>Кількість парних чисел: </div></td>
+                    <td><span id="parn"></span></td>
+                </tr>
+                <tr>
+                    <td><div>Кількість непарних чисел: </div></td>
+                    <td><span id="neparn"></span></td>
+                </tr>
+                <tr>
+                    <td><div>Кількість додатніх чисел:</div></td>
+                    <td><span id="dodatne"></span></td>
+                </tr>
+                <tr>
+                    <td><div>Кількість від'ємних чисел:</div></td>
+                    <td><span id="videmne"></span></td>
+                </tr>
+            </table>
+    </section>
 
 
     <section>
         <label for="zavd2">Завдання 2</label>
         <input type="checkbox" id="zavd2">
         <div class="invisibleElement">
-
-            <div class="table">
-                <table>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
-            </div>
-        
-            <div class="table">
-                <table>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
-            </div>
-        
-            <div class="table">
-                <table>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
-            </div>
+            <div class="table"></div><br>
+            <div class="table"></div><br>
+            <div class="table"></div><br>
         </div>
     </section>
 
@@ -118,60 +80,39 @@
         <label for="zavd3">Завдання 3</label>
         <input type="checkbox" id="zavd3">
         <div class="invisibleElement">
+            <table>
+                <tr>
+                    <td>
+                        <p>Матриця:</p>
+                        <div id="table1"></div>
+                    </td>
+                    <td>
+                        <div>Кількість додатіх елементів матриці =<span id="dodatneMatrx"></span></div>
+                        <div>Кількість рядків матриці в яких є хоч один 0 =<span id="NullMatrixRow"></span></div>
+                        <div>Кількість рядків матриці в яких нема 0 =<span id="NullMatrixColumn"></span></div>
+                        <div>Серія однакових чисел =<span id="maxStreak"></span> в рядку <span id="maxStreakRow"></span>
+                        </div>
+                    </td>
+                    <td>
 
-            <div id="matrxTable">
-                <table>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
-            </div>
+                        <div>Добуток елементів в тих рядках, які не містять від’ємних елементів:</div>
+                        <div id="table_productRowNumbers"></div>
+                        <div>Сума елементів в тих стовпцях, які не містять від’ємних елементів:</div>
+                        <div id="table_sumColumnNumbers"></div>
+                        <div>Сума елементів в тих стовпцях, які містять хоча б один від’ємний елемент:</div>
+                        <div id="table_sumColumnNegativeNumbers"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Транспонована матриця:</p>
+                        <div id="table2"></div>
+                    </td>
+
+                </tr>
+            </table>
+
+            <hr>
 
         </div>
     </section>
