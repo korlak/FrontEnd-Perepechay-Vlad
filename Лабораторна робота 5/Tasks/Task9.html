@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        #cart {
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+    <title>Замовлення товарів</title>
+</head>
+<body>
+    <h1>Список товарів</h1>
+    <ul id="productList">
+        <li>
+            Товар 1 <button class="orderButton">Замовити</button>
+        </li>
+        <li>
+            Товар 2 <button class="orderButton">Замовити</button>
+        </li>
+        <li>
+            Товар 3 <button class="orderButton">Замовити</button>
+        </li>
+    </ul>
+
+    <h2>Кошик</h2>
+    <div id="cart"></div>
+    <p id="totalQuantity">Загальна кількість товарів: 0</p>
+
+    <script>
+        const orderButtons = document.querySelectorAll(".orderButton");
+        const cart = document.getElementById("cart");
+        const totalQuantityDisplay = document.getElementById("totalQuantity");
+        const cartItems = {};
+
+        // Обробник подій для кнопок "Замовити"
+        orderButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                const productName = button.parentElement.textContent.trim(); // Отримуємо назву товару
+
+                if (!cartItems[productName]) {
+                    cartItems[productName] = 1;
+                } else {
+                    cartItems[productName]++;
+                }
+
+                updateCart();
+            });
+        });
+
+        // Оновлення відображення кошика
+        function updateCart() {
+            cart.innerHTML = ""; // Очистити кошик
+
+            for (const itemName in cartItems) {
+                const cartItem = document.createElement("div");
+                cartItem.textContent = `${itemName}: ${cartItems[itemName]}`;
+                cart.appendChild(cartItem);
+            }
+
+            updateTotalQuantity();
+        }
+
+        // Оновлення загальної кількості товарів
+        function updateTotalQuantity() {
+            let totalQuantity = 0;
+
+            for (const itemName in cartItems) {
+                totalQuantity += cartItems[itemName];
+            }
+
+            totalQuantityDisplay.textContent = `Загальна кількість товарів: ${totalQuantity}`;
+        }
+    </script>
+</body>
+</html>

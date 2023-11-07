@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .image-container img {
+            filter: grayscale(100%);
+            opacity: 0.5;
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <link rel="stylesheet" href="../style.css">
+    <title>Галерея зображень</title>
+</head>
+<body>
+    <h1>Галерея зображень</h1>
+    <div class="image-container">
+        <img src="img/1.jpg" onclick="toggleImage(this)" data-active="false">
+        <img src="img/2.jpg" onclick="toggleImage(this)" data-active="false">
+        <img src="img/3.jpg" onclick="toggleImage(this)" data-active="false">
+        <img src="img/4.jpg" onclick="toggleImage(this)" data-active="false">
+        <img src="img/5.jpg" onclick="toggleImage(this)" data-active="false">
+        <img src="img/6.jpg" onclick="toggleImage(this)" data-active="false">
+        <!-- Додайте інші зображення за необхідності -->
+    </div>
+
+    <script>
+        function toggleImage(image) {
+            const isActive = image.getAttribute("data-active");
+            if (isActive === "false") {
+                // Зробити зображення активним
+                image.style.filter = "grayscale(0%)";
+                image.style.opacity = "1";
+                image.setAttribute("data-active", "true");
+            } else {
+                // Зробити зображення неактивним
+                image.style.filter = "grayscale(100%)";
+                image.style.opacity = "0.5";
+                image.setAttribute("data-active", "false");
+            }
+        }
+    </script>
+</body>
+</html>

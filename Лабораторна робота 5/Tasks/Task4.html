@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Таблиця множення</title>
+</head>
+<body>
+    <h1>Таблиця множення</h1>
+    <p id="score">Загальний рахунок: 0</p>
+    <p id="question">Питання: 2 x 3</p>
+    <input type="text" id="userAnswer" placeholder="Введіть вашу відповідь">
+    <button id="checkButton">Перевірити</button>
+    <p id="result"></p>
+    <button id="nextButton">Наступне завдання</button>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const questions = [
+                { question: "Питання: 2 x 3", correctAnswer: 6 },
+                { question: "Питання: 5 x 7", correctAnswer: 35 },
+                { question: "Питання: 8 x 4", correctAnswer: 32 },
+            ];
+
+            let currentQuestion = 0;
+            let score = 0;
+
+            const scoreDisplay = document.getElementById("score");
+            const questionDisplay = document.getElementById("question");
+            const userAnswerInput = document.getElementById("userAnswer");
+            const checkButton = document.getElementById("checkButton");
+            const resultDisplay = document.getElementById("result");
+            const nextButton = document.getElementById("nextButton");
+
+            displayQuestion(currentQuestion);
+
+            checkButton.addEventListener("click", function () {
+                const userAnswer = parseInt(userAnswerInput.value);
+                if (!isNaN(userAnswer)) {
+                    if (userAnswer === questions[currentQuestion].correctAnswer) {
+                        score++;
+                        resultDisplay.textContent = "Правильно!";
+                    } else {
+                        resultDisplay.textContent = "Неправильно. Правильна відповідь: " + questions[currentQuestion].correctAnswer;
+                    }
+                    scoreDisplay.textContent = "Загальний рахунок: " + score;
+                }
+            });
+
+            nextButton.addEventListener("click", function () {
+                if (currentQuestion < questions.length - 1) {
+                    currentQuestion++;
+                    displayQuestion(currentQuestion);
+                    userAnswerInput.value = "";
+                    resultDisplay.textContent = "";
+                } else {
+                    alert("Тест завершено. Загальний рахунок: " + score);
+                }
+            });
+
+            function displayQuestion(index) {
+                questionDisplay.textContent = questions[index].question;
+            }
+        });
+    </script>
+</body>
+</html>

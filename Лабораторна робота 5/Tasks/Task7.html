@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .block {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            transition: transform 0.3s, width 0.3s, height 0.3s;
+        }
+    </style>
+    <title>Зміна розміру та кута повороту блока</title>
+</head>
+<body>
+    <div class="block" id="resizableBlock"></div>
+    <label for="width">Змінити ширину:</label>
+    <input type="range" id="width" min="50" max="200" step="1" value="100">
+    <br>
+    <label for="height">Змінити висоту:</label>
+    <input type="range" id="height" min="50" max="200" step="1" value="100">
+    <br>
+    <label for="rotate">Змінити кут повороту:</label>
+    <input type="range" id="rotate" min="0" max="360" step="1" value="0">
+    
+    <script>
+        const block = document.getElementById("resizableBlock");
+        const widthInput = document.getElementById("width");
+        const heightInput = document.getElementById("height");
+        const rotateInput = document.getElementById("rotate");
+
+        widthInput.addEventListener("input", () => {
+            const width = widthInput.value + "px";
+            block.style.width = width;
+        });
+
+        heightInput.addEventListener("input", () => {
+            const height = heightInput.value + "px";
+            block.style.height = height;
+        });
+
+        rotateInput.addEventListener("input", () => {
+            const rotation = rotateInput.value + "deg";
+            block.style.transform = `rotate(${rotation})`;
+        });
+    </script>
+</body>
+</html>

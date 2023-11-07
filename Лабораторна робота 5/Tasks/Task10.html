@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Стилі для контейнера та зображень */
+        #imageContainer {
+            width: 300px; /* Ширина контейнера, змініть на бажану */
+            height: 200px; /* Висота контейнера, змініть на бажану */
+            text-align: center;
+            position: relative;
+        }
+
+        #image {
+            max-width: 100%;
+            max-height: 100%;
+            transition: opacity 0.5s;
+        }
+
+        /* Стилі для кнопок */
+        #prevButton, #nextButton {
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            font-size: 24px;
+            user-select: none;
+        }
+
+        #prevButton {
+            left: 0;
+        }
+
+        #nextButton {
+            right: 0;
+        }
+    </style>
+    <title>Галерея зображень</title>
+</head>
+<body>
+    <h1>Галерея зображень</h1>
+    <div id="imageContainer">
+        <img id="image" src="img/1.jpg" alt="Зображення 1">
+        <div id="prevButton">←</div>
+        <div id="nextButton">→</div>
+    </div>
+
+    <script>
+        const image = document.getElementById("image");
+        const prevButton = document.getElementById("prevButton");
+        const nextButton = document.getElementById("nextButton");
+
+        const images = ["img/1.jpg", "img/2.jpg", "img/3.jpg"];
+        let currentImageIndex = 0;
+
+        // Обробник подій для кнопки "Назад"
+        prevButton.addEventListener("click", () => {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            updateImage();
+        });
+
+        // Обробник подій для кнопки "Вперед"
+        nextButton.addEventListener("click", () => {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            updateImage();
+        });
+
+        // Оновлення зображення
+        function updateImage() {
+            const newImageSrc = images[currentImageIndex];
+            image.style.opacity = 0;
+            setTimeout(() => {
+                image.src = newImageSrc;
+                image.style.opacity = 1;
+            }, 500); // Затримка для анімації зміни зображення
+        }
+    </script>
+</body>
+</html>

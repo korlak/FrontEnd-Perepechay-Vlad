@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .form-section {
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            background-color: #f7f7f7;
+            transition: background-color 0.3s;
+        }
+
+        .form-section.active {
+            background-color: #c1e0ff;
+        }
+        
+        .form-section label {
+            display: block;
+        }
+
+        .form-section input {
+            width: 100%;
+            padding: 5px;
+            margin: 5px 0;
+        }
+    </style>
+    <title>Фокус</title>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-section">
+            <label for="name">Ім'я:</label>
+            <input type="text" id="name" name="name">
+        </div>
+
+        <div class="form-section">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+        </div>
+
+        <div class="form-section">
+            <label for="message">Повідомлення:</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+        </div>
+    </div>
+
+    <script>
+        const formSections = document.querySelectorAll(".form-section");
+
+        formSections.forEach(section => {
+            section.addEventListener("focusin", () => {
+                section.classList.add("active");
+            });
+
+            section.addEventListener("focusout", () => {
+                section.classList.remove("active");
+            });
+        });
+    </script>
+</body>
+</html>
